@@ -40,7 +40,7 @@ public class Audio extends Activity {
                 Intent intent = new Intent(
                         RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
  
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");
+                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "pt-BR");
  
                 try {
                     startActivityForResult(intent, RESULT_SPEECH);

@@ -4,6 +4,7 @@ package com.unicap.audiorec;
 import java.util.ArrayList;
 
 import com.unicap.unicap_arq2.R;
+import com.unicap.unicap_arq2.TextoAudio;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
@@ -22,18 +23,21 @@ public class Audio extends Activity {
  
     private ImageButton btnSpeak;
     private TextView txtText;
- 
+    String texto;
+    int saida=0;
+     
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_audio);
- 
+        
         txtText = (TextView) findViewById(R.id.txtText);
  
         btnSpeak = (ImageButton) findViewById(R.id.btnSpeak);
- 
+        
         btnSpeak.setOnClickListener(new View.OnClickListener() {
  
+        
             @Override
             public void onClick(View v) {
  
@@ -51,9 +55,12 @@ public class Audio extends Activity {
                             Toast.LENGTH_SHORT);
                     t.show();
                 }
+               
             }
         });
- 
+        
+           
+            
     }
  
     @Override
@@ -74,10 +81,19 @@ public class Audio extends Activity {
                         .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
  
                 txtText.setText(text.get(0));
+                trocardeTela();
             }
             break;
         }
  
         }
+    }
+    void trocardeTela(){
+    	Intent textoAudio = new Intent(this, TextoAudio.class);
+    	 texto = txtText.getText().toString();
+         Bundle parametros = new Bundle();
+			parametros.putString("onibus",texto);
+			textoAudio.putExtras(parametros);// adiciona os parametros a intent
+         startActivity(textoAudio);
     }
 }

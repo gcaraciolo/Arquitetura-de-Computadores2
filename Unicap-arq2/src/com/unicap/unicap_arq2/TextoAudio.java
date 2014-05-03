@@ -5,6 +5,7 @@ import java.util.Random;
 import com.unicap.unicap_arq2.R;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.Menu;
@@ -16,11 +17,23 @@ public class TextoAudio extends Activity {
 
    TextToSpeech ttobj;
    private EditText write;
+   String texto;
    @Override
    protected void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.fragment_texto_audio);
+      Intent it  = getIntent();
+		if(it != null){
+		  Bundle params  = it.getExtras();
+		  if(params != null){
+		    texto   = params.getString("onibus");
+		  }
+		}
+		
+      
+      
       write = (EditText)findViewById(R.id.editText1);
+      
       ttobj=new TextToSpeech(getApplicationContext(), 
       new TextToSpeech.OnInitListener() {
       @Override
@@ -46,7 +59,8 @@ public class TextoAudio extends Activity {
       return true;
    }
    public void speakText(View view){
-      String toSpeak = write.getText().toString();
+	   String toSpeak = "voce quis dizer"+texto;
+      //String toSpeak = write.getText().toString();
       Toast.makeText(getApplicationContext(), toSpeak, 
       Toast.LENGTH_SHORT).show();
       ttobj.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);

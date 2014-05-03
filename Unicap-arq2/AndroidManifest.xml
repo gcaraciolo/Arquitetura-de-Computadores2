@@ -21,16 +21,16 @@
         <activity
             android:name="com.unicap.audiorec.Audio"
             android:label="@string/title_activity_audio" >
-            
-        </activity>
-        <activity
-            android:name="com.unicap.unicap_arq2.TextoAudio"
-            android:label="@string/title_activity_texto_audio" >
- 	<intent-filter>
+	<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.unicap.unicap_arq2.TextoAudio"
+            android:label="@string/title_activity_texto_audio" >
+ 	            
         </activity>
     </application>
     

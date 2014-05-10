@@ -7,8 +7,9 @@
     <string name="title_activity_audio">Audio</string>
     <string name="speak"></string>
     <string name="app">TextToSpeech</string>
-   <string name="text1">Text to Speech</string>
-   <string name="write">Write Text</string>
+    <string name="text1">Text to Speech</string>
+    <string name="write">Write Text</string>
     <string name="title_activity_texto_audio">TextoAudio</string>
+    <string name="title_activity_initaudio">Initaudio</string>
 
 </resources>

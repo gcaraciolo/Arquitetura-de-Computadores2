@@ -31,7 +31,7 @@ public class TextoAudio extends Activity {
 		}
 		
       
-      
+		
       write = (EditText)findViewById(R.id.editText1);
       
       ttobj=new TextToSpeech(getApplicationContext(), 
@@ -59,7 +59,7 @@ public class TextoAudio extends Activity {
       return true;
    }
    public void speakText(View view){
-	   String toSpeak = "voce quis dizer"+texto;
+	   String toSpeak = "voce quis dizer "+texto+"?";
       //String toSpeak = write.getText().toString();
       Toast.makeText(getApplicationContext(), toSpeak, 
       Toast.LENGTH_SHORT).show();
